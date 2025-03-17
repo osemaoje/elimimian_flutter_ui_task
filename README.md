@@ -1,61 +1,69 @@
-Elimimian Flutter UI Task
+# Elimimian Flutter UI Task
+
 A Flutter project demonstrating best practices in architecture, testing, and CI/CD.
 
-🚀 Setup Instructions
+---
+
+## 🚀 Setup Instructions
 Follow these steps to set up and run the project locally:
 
-1️⃣ Clone the Repository
-sh
-Copy
-Edit
-git clone https://github.com/osemaoje/elimimian_flutter_ui_task
-cd flutter_project
-2️⃣ Install Dependencies
-sh
-Copy
-Edit
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/osemaoje/elimimian_flutter_ui_task.git
+cd elimimian_flutter_ui_task
+```
+
+### 2️⃣ Install Dependencies
+```sh
 flutter pub get
-3️⃣ Run the App
-sh
-Copy
-Edit
+```
+
+### 3️⃣ Run the App
+```sh
 flutter run
-🏛 Architecture Decisions
-State Management
-Utilized Riverpod
-Folder Structure
+```
+
+---
+
+## 🏛 Architecture Decisions
+
+### **State Management**
+- Utilized **Riverpod** for efficient and scalable state management.
+
+### **Folder Structure**
 The project follows a feature-based folder structure for better scalability and maintainability:
 
-bash
-Copy
-Edit
+```
 lib/
 │── pages/            # UI Screens
 │── widgets/          # Reusable UI Components
 │── providers/        # State Management Files
 │── routes/           # Go Router
-│── utils/            # Colors
+│── utils/            # Utilities (e.g., Colors, Helpers)
 │── main.dart         # App Entry Point
+```
 
-📸 UI Screenshots
-![Screenshot_20250317-234419](https://github.com/user-attachments/assets/1f2aaa6c-6fc8-4b67-ba76-ec3f590c8ba8)
-![Screenshot_20250317-235059](https://github.com/user-attachments/assets/be662539-25d7-4f45-aefe-bf287f31883c)
-![Screenshot_20250317-235053](https://github.com/user-attachments/assets/4009f551-27a5-4fbf-84ad-31a770da97fe)
+---
 
+## 📸 UI Screenshots
+Below are some screenshots demonstrating the app's UI across different screen sizes:
 
-Mobile	Tablet
-🧪 Testing
-Run Widget Tests
-Execute the following command to run widget tests:
+![Screenshot_1](https://github.com/user-attachments/assets/1f2aaa6c-6fc8-4b67-ba76-ec3f590c8ba8)
+![Screenshot_2](https://github.com/user-attachments/assets/be662539-25d7-4f45-aefe-bf287f31883c)
+![Screenshot_3](https://github.com/user-attachments/assets/4009f551-27a5-4fbf-84ad-31a770da97fe)
 
-sh
-Copy
-Edit
+---
+
+## 🧪 Testing
+### **Run Widget Tests**
+Execute the following commands to run widget tests:
+```sh
 flutter test
 flutter test test/main_test.dart
-dart
-Copy
-Edit
+```
+
+### **Example Widget Test (`test/main_test.dart`)**
+```dart
 import 'package:eimimian_flutter_developer_coding_task/main.dart';
 import 'package:eimimian_flutter_developer_coding_task/pages/main_page.dart';
 import 'package:eimimian_flutter_developer_coding_task/pages/post_page.dart';
@@ -80,14 +88,15 @@ void main() {
     expect(find.byType(PostPage), findsOneWidget);
   });
 }
+```
 
-🔄 Continuous Integration (GitHub Actions)
-This project uses GitHub Actions for automated testing on every push and pull request.
+---
 
-GitHub Actions Workflow (.github/workflows/flutter_test.yml)
-yaml
-Copy
-Edit
+## 🔄 Continuous Integration (GitHub Actions)
+This project uses **GitHub Actions** for automated testing on every push and pull request.
+
+### **GitHub Actions Workflow (`.github/workflows/flutter_test.yml`)**
+```yaml
 name: Flutter CI
 
 on:
@@ -115,3 +124,12 @@ jobs:
 
       - name: Run widget tests
         run: flutter test
+```
+
+---
+
+## 📜 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+

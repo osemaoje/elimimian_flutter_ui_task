@@ -39,7 +39,7 @@ lib/
 │── widgets/          # Reusable UI Components
 │── providers/        # State Management Files
 │── routes/           # Go Router
-│── utils/            # Utilities (e.g., Colors, Helpers)
+│── utils/            # Utilities (e.g., Colors)
 │── main.dart         # App Entry Point
 ```
 

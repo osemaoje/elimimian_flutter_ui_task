@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # elimimian_flutter_ui_task
-=======
+
 # eimimian_flutter_developer_coding_task
 
 A new Flutter project.

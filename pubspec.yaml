@@ -84,8 +84,6 @@ flutter:
       fonts:
        - asset: assets/fonts/CabinetGrotesk-Black.otf
          weight: 900
-       - asset: assets/fonts/CabinetGrotesk-ExtraBold.otf
-         weight: 800
        - asset: assets/fonts/CabinetGrotesk-Bold.otf
          weight: 700
        - asset: assets/fonts/CabinetGrotesk-Medium.otf

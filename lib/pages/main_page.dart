@@ -37,83 +37,86 @@ class _MainPageState extends ConsumerState<MainPage> {
       child: Scaffold(
         body: Container(
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //Top Header
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(children: [
-                    Container(
-                      height: 40.h,
-                      width: 40.h,
-                      child: Image(image: AssetImage("assets/images/profilepicture.png")),
-                    ),
-                    SizedBox(width: 5.w),
-                    ToggleSwitch(),
-                  ]),
-                  Row(children: [
-                    Container(
-                      width: 32.w,
-                      height: 32.w,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: AppColors.iconBlack,
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Top Header
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(children: [
+                      Container(
+                        height: 40.h,
+                        width: 40.h,
+                        child: Image(image: AssetImage("assets/images/profilepicture.png")),
                       ),
-                      padding: EdgeInsets.all(3),
-                      child: SvgPicture.asset('assets/icons/nnotification.svg'),
-                    ),
-                    SizedBox(width: 5.w),
-                    Stack(
-                      clipBehavior: Clip.none,
-                      children: [
-                        Container(
-                          width: 32.w,
-                          height: 32.w,
-                          padding: EdgeInsets.all(4),
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AppColors.customGrey,
-                          ),
-                          child: SvgPicture.asset('assets/icons/notification.svg'),
+                      SizedBox(width: 5.w),
+                      ToggleSwitch(),
+                    ]),
+                    Row(children: [
+                      Container(
+                        width: 32.w,
+                        height: 32.w,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: AppColors.iconBlack,
                         ),
-                        Positioned(
-                          right: -5,
-                          top: -2,
-                          child: Container(
-                            width: 16.w,
-                            height: 16.w,
-                            decoration: BoxDecoration(
-                              color: AppColors.customRed,
+                        padding: EdgeInsets.all(3),
+                        child: SvgPicture.asset('assets/icons/nnotification.svg'),
+                      ),
+                      SizedBox(width: 5.w),
+                      Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Container(
+                            width: 32.w,
+                            height: 32.w,
+                            padding: EdgeInsets.all(4),
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
+                              color: AppColors.customGrey,
                             ),
-                            child: Center(
-                              child: Text(
-                                '3',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 8.sp,
+                            child: SvgPicture.asset('assets/icons/notification.svg'),
+                          ),
+                          Positioned(
+                            right: -5,
+                            top: -2,
+                            child: Container(
+                              width: 16.w,
+                              height: 16.w,
+                              decoration: BoxDecoration(
+                                color: AppColors.customRed,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '3',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 8.sp,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ]),
-                ],
-              ),
-              SizedBox(height: 10.h),
-              boldtext14Normal(text: "Community"),
-              //SearchTextField
-              SearchTextField(
-                controller: searchController,
-              ),
-              SizedBox(height: 20.h),
-              //Posts Section
-              Expanded(
-                child: ListView.separated(
+                        ],
+                      ),
+                    ]),
+                  ],
+                ),
+                SizedBox(height: 10.h),
+                boldtext14Normal(text: "Community"),
+                // SearchTextField
+                SearchTextField(
+                  controller: searchController,
+                ),
+                SizedBox(height: 20.h),
+                // Posts Section
+                ListView.separated(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(), // Prevents ListView from conflicting with scrolling
                   itemCount: 2,
                   itemBuilder: (context, index) {
                     if (index == 0) {
@@ -145,10 +148,12 @@ class _MainPageState extends ConsumerState<MainPage> {
                   },
                   separatorBuilder: (context, index) => const SizedBox(height: 16),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
+
+
         //Post Button
         floatingActionButton: CustomFAB(
           onPressed: () {
